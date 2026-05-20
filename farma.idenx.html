@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MG FarmaSalud | MG CORPORATION</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#050505,#120018,#1d002b);
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(12px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+font-size:40px;
+font-family:'Cormorant Garamond',serif;
+font-weight:700;
+}
+
+.logo span{
+color:#ffd54a;
+font-style:italic;
+}
+
+.menu{
+display:flex;
+gap:28px;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.4s;
+}
+
+.menu a:hover{
+color:#ffd54a;
+}
+
+.nav-btn{
+background:linear-gradient(45deg,#ffd54a,#ff9900);
+padding:14px 25px;
+border-radius:40px;
+text-decoration:none;
+font-weight:700;
+color:black;
+transition:0.4s;
+}
+
+.nav-btn:hover{
+transform:translateY(-5px);
+}
+
+/* HERO */
+
+header{
+min-height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.82)),
+url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1800');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:140px 6%;
+}
+
+.hero{
+max-width:1100px;
+animation:fadeUp 1.5s ease;
+}
+
+.hero-mini{
+letter-spacing:10px;
+font-size:15px;
+color:#ffd54a;
+margin-bottom:20px;
+}
+
+.hero-title{
+font-size:120px;
+line-height:0.9;
+font-family:'Cormorant Garamond',serif;
+}
+
+.hero-title span{
+color:#ffd54a;
+font-style:italic;
+}
+
+.hero-sub{
+font-size:28px;
+letter-spacing:8px;
+margin-top:25px;
+font-weight:600;
+}
+
+.hero-line{
+width:180px;
+height:3px;
+background:#ffd54a;
+margin:30px auto;
+}
+
+.hero-description{
+font-size:23px;
+line-height:1.8;
+color:#f1f1f1;
+}
+
+.hero-buttons{
+margin-top:45px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-btn{
+padding:18px 40px;
+border-radius:50px;
+font-weight:700;
+text-decoration:none;
+transition:0.4s;
+}
+
+.primary{
+background:linear-gradient(45deg,#ffd54a,#ff9900);
+color:black;
+}
+
+.secondary{
+border:2px solid #ffd54a;
+color:#ffd54a;
+}
+
+.hero-btn:hover{
+transform:translateY(-6px);
+}
+
+.features{
+margin-top:50px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.feature{
+background:rgba(255,255,255,0.06);
+padding:18px 24px;
+border-radius:18px;
+backdrop-filter:blur(10px);
+transition:0.4s;
+}
+
+.feature:hover{
+transform:translateY(-8px);
+}
+
+/* SECTIONS */
+
+.section{
+padding:100px 6%;
+}
+
+.section-title{
+text-align:center;
+font-size:65px;
+font-family:'Cormorant Garamond',serif;
+margin-bottom:60px;
+}
+
+.section-title span{
+color:#ffd54a;
+}
+
+/* PRODUCTOS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border-radius:25px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+transition:0.5s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(180,0,255,0.5);
+}
+
+.card img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.card-content{
+padding:28px;
+}
+
+.card h3{
+font-size:30px;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.7;
+color:#ddd;
+margin-bottom:12px;
+}
+
+.promo{
+background:linear-gradient(45deg,#8f3dff44,#ff00ff33);
+padding:14px;
+border-radius:14px;
+font-weight:700;
+margin:20px 0;
+}
+
+.price{
+font-size:26px;
+font-weight:700;
+color:#ffd54a;
+margin-bottom:15px;
+}
+
+.buy-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:linear-gradient(45deg,#8f3dff,#ff00c8);
+color:white;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:0.4s;
+}
+
+.buy-btn:hover{
+transform:scale(1.04);
+}
+
+/* RULETA */
+
+.wheel-section{
+text-align:center;
+background:radial-gradient(circle,#8f3dff33,transparent 60%);
+}
+
+.wheel-title{
+font-size:75px;
+font-family:'Cormorant Garamond',serif;
+color:#ffd54a;
+margin-bottom:20px;
+}
+
+.wheel-wrapper{
+position:relative;
+width:420px;
+height:420px;
+margin:40px auto;
+}
+
+.pointer{
+position:absolute;
+top:-20px;
+left:50%;
+transform:translateX(-50%);
+width:0;
+height:0;
+border-left:25px solid transparent;
+border-right:25px solid transparent;
+border-top:50px solid #ffd54a;
+z-index:10;
+}
+
+.wheel{
+width:100%;
+height:100%;
+border-radius:50%;
+border:12px solid #ffd54a;
+background:
+conic-gradient(
+#5f00ff 0deg 60deg,
+#ff00d4 60deg 120deg,
+#ff6a00 120deg 180deg,
+#ff004c 180deg 240deg,
+#009dff 240deg 300deg,
+#00c97d 300deg 360deg
+);
+
+transition:5s cubic-bezier(.17,.67,.2,1);
+position:relative;
+box-shadow:0 0 40px rgba(255,215,74,0.8);
+}
+
+.wheel-texts span{
+position:absolute;
+left:50%;
+top:50%;
+font-size:18px;
+font-weight:800;
+transform-origin:0 0;
+color:white;
+text-shadow:0 0 8px black;
+}
+
+.wheel-texts span:nth-child(1){transform:rotate(30deg) translate(120px);}
+.wheel-texts span:nth-child(2){transform:rotate(90deg) translate(120px);}
+.wheel-texts span:nth-child(3){transform:rotate(150deg) translate(120px);}
+.wheel-texts span:nth-child(4){transform:rotate(210deg) translate(120px);}
+.wheel-texts span:nth-child(5){transform:rotate(270deg) translate(120px);}
+.wheel-texts span:nth-child(6){transform:rotate(330deg) translate(120px);}
+
+.spin-btn{
+margin-top:35px;
+padding:20px 45px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ffd54a,#ff8a00);
+font-size:20px;
+font-weight:800;
+cursor:pointer;
+}
+
+.result{
+margin-top:30px;
+font-size:35px;
+font-weight:800;
+color:#ffd54a;
+}
+
+/* RESEÑAS */
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.review{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:25px;
+text-align:center;
+}
+
+/* COMENTARIOS */
+
+.comment-box{
+max-width:800px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.comment-box input,
+.comment-box textarea{
+width:100%;
+padding:18px;
+margin-bottom:20px;
+border:none;
+border-radius:15px;
+background:#15001f;
+color:white;
+font-size:16px;
+}
+
+.comment-box textarea{
+height:140px;
+resize:none;
+}
+
+.rating{
+display:flex;
+flex-direction:row-reverse;
+justify-content:center;
+gap:10px;
+margin-bottom:25px;
+}
+
+.rating input{
+display:none;
+}
+
+.rating label{
+font-size:40px;
+color:#555;
+cursor:pointer;
+transition:0.3s;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label{
+color:#ffd54a;
+transform:scale(1.1);
+}
+
+#listaComentarios{
+margin-top:35px;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.comentario{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+/* CONTACTO */
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.contact-box{
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:25px;
+text-align:center;
+text-decoration:none;
+color:white;
+transition:0.4s;
+}
+
+.contact-box:hover{
+transform:translateY(-10px);
+}
+
+.contact-box i{
+font-size:55px;
+color:#ffd54a;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+background:black;
+border-top:2px solid #8f3dff;
+color:#ccc;
+}
+
+.creator{
+display:block;
+margin-top:15px;
+color:#ffd54a;
+font-weight:700;
+letter-spacing:2px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero-title{
+font-size:70px;
+}
+
+.menu{
+display:none;
+}
+
+.wheel-wrapper{
+width:300px;
+height:300px;
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+MG <span>FarmaSalud</span>
+</div>
+
+<div class="menu">
+<a href="#">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#ruleta">Ruleta</a>
+<a href="#reviews">Reseñas</a>
+<a href="#comentarios">Comentarios</a>
+<a href="#contacto">Contacto</a>
+</div>
+
+<a href="#contacto" class="nav-btn">
+Contáctanos
+</a>
+
+</nav>
+
+<!-- HERO -->
+
+<header>
+
+<div class="hero">
+
+<div class="hero-mini">
+• FARMACIA DE CONFIANZA •
+</div>
+
+<h1 class="hero-title">
+MG <span>FarmaSalud</span>
+</h1>
+
+<div class="hero-sub">
+MG CORPORATION
+</div>
+
+<div class="hero-line"></div>
+
+<p class="hero-description">
+Tu salud es nuestra prioridad.
+Medicamentos, vitaminas, productos para bebés,
+cuidado personal y promociones exclusivas.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#productos" class="hero-btn primary">
+EXPLORAR PRODUCTOS
+</a>
+
+<a href="#ruleta" class="hero-btn secondary">
+GIRAR RULETA
+</a>
+
+</div>
+
+<div class="features">
+
+<div class="feature">💊 Medicamentos originales</div>
+<div class="feature">🚚 Envíos rápidos</div>
+<div class="feature">👨‍⚕️ Atención profesional</div>
+<div class="feature">🔒 Pagos seguros</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- PRODUCTOS -->
+
+<section class="section" id="productos">
+
+<h2 class="section-title">
+Nuestros <span>Productos</span>
+</h2>
+
+<div class="products">
+
+<!-- TOS SIN IMAGEN -->
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>Tratamiento para tos</h3>
+
+<p>
+Medicamentos y jarabes especializados
+para aliviar la tos seca y con flema.
+</p>
+
+<p>
+<strong>Beneficios:</strong>
+Ayuda a respirar mejor y calma la irritación.
+</p>
+
+<p>
+<strong>Reacciones adversas:</strong>
+Somnolencia leve o mareos.
+</p>
+
+<div class="promo">
+🔥 Jarabes y antigripales — 2x1
+</div>
+
+<div class="price">
+S/ 12.90
+</div>
+
+<button class="buy-btn"
+onclick="window.location.href='#contacto'">
+🛒 Comprar ahora
+</button>
+
+</div>
+
+</div>
+
+<!-- FIEBRE -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1597764699510-7c1c19b1d7f0?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Tratamiento para fiebre</h3>
+
+<p>Medicamentos para bajar la fiebre.</p>
+
+<p><strong>Beneficios:</strong> Reduce temperatura y dolor.</p>
+
+<p><strong>Reacciones adversas:</strong> Náuseas leves.</p>
+
+<div class="promo">
+🔥 Antifebriles — 15% OFF
+</div>
+
+<div class="price">
+S/ 8.90
+</div>
+
+<button class="buy-btn">
+🛒 Comprar ahora
+</button>
+
+</div>
+
+</div>
+
+<!-- VITAMINAS -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Vitaminas</h3>
+
+<p>Vitaminas para fortalecer defensas.</p>
+
+<p><strong>Beneficios:</strong> Más energía y protección.</p>
+
+<p><strong>Reacciones adversas:</strong> Molestias leves estomacales.</p>
+
+<div class="promo">
+🔥 Vitamina C — 2x1
+</div>
+
+<div class="price">
+S/ 14.90
+</div>
+
+<button class="buy-btn">
+🛒 Comprar ahora
+</button>
+
+</div>
+
+</div>
+
+<!-- BEBÉS -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Medicamentos para bebés</h3>
+
+<p>Productos pediátricos seguros.</p>
+
+<p><strong>Beneficios:</strong> Alivio suave y seguro.</p>
+
+<p><strong>Reacciones adversas:</strong> Irritación leve.</p>
+
+<div class="promo">
+🔥 Pediátricos — 15% OFF
+</div>
+
+<div class="price">
+S/ 18.90
+</div>
+
+<button class="buy-btn">
+🛒 Comprar ahora
+</button>
+
+</div>
+
+</div>
+
+<!-- CUIDADO -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200">
+
+<div class="card-content">
+
+<h3>Cuidado personal</h3>
+
+<p>Cremas y productos dermatológicos.</p>
+
+<p><strong>Beneficios:</strong> Protección e hidratación.</p>
+
+<p><strong>Reacciones adversas:</strong> Posible irritación.</p>
+
+<div class="promo">
+🔥 Cremas — 20% OFF
+</div>
+
+<div class="price">
+S/ 24.90
+</div>
+
+<button class="buy-btn">
+🛒 Comprar ahora
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RULETA -->
+
+<section class="section wheel-section" id="ruleta">
+
+<h2 class="wheel-title">
+¡GIRA Y GANA!
+</h2>
+
+<div class="wheel-wrapper">
+
+<div class="pointer"></div>
+
+<div class="wheel" id="wheel">
+
+<div class="wheel-texts">
+
+<span>10% OFF</span>
+<span>20% OFF</span>
+<span>2x1</span>
+<span>ENVÍO</span>
+<span>30% OFF</span>
+<span>PREMIO</span>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="spin-btn" onclick="spinWheel()">
+🎉 GIRAR RULETA
+</button>
+
+<div class="result" id="result"></div>
+
+<audio id="winSound">
+<source src="https://assets.mixkit.co/active_storage/sfx/951/951-preview.mp3">
+</audio>
+
+</section>
+
+<!-- RESEÑAS -->
+
+<section class="section" id="reviews">
+
+<h2 class="section-title">
+Reseñas de <span>Clientes</span>
+</h2>
+
+<div class="reviews">
+
+<div class="review">
+<h3>María González</h3>
+<div style="color:#ffd54a;font-size:24px;margin:15px 0;">★★★★★</div>
+<p>Excelente atención y promociones.</p>
+</div>
+
+<div class="review">
+<h3>Carlos Ramírez</h3>
+<div style="color:#ffd54a;font-size:24px;margin:15px 0;">★★★★★</div>
+<p>Muy buenos descuentos y envíos rápidos.</p>
+</div>
+
+<div class="review">
+<h3>Ana López</h3>
+<div style="color:#ffd54a;font-size:24px;margin:15px 0;">★★★★★</div>
+<p>La mejor farmacia para vitaminas y bebés.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- COMENTARIOS -->
+
+<section class="section" id="comentarios">
+
+<h2 class="section-title">
+Añadir <span>Comentario</span>
+</h2>
+
+<div class="comment-box">
+
+<form id="commentForm">
+
+<input type="text"
+id="nombre"
+placeholder="Tu nombre"
+required>
+
+<textarea
+id="mensaje"
+placeholder="Escribe tu comentario..."
+required></textarea>
+
+<div class="rating">
+
+<input type="radio" id="star5" name="rating" value="5">
+<label for="star5">★</label>
+
+<input type="radio" id="star4" name="rating" value="4">
+<label for="star4">★</label>
+
+<input type="radio" id="star3" name="rating" value="3">
+<label for="star3">★</label>
+
+<input type="radio" id="star2" name="rating" value="2">
+<label for="star2">★</label>
+
+<input type="radio" id="star1" name="rating" value="1">
+<label for="star1">★</label>
+
+</div>
+
+<button type="submit" class="buy-btn">
+✨ Publicar comentario
+</button>
+
+</form>
+
+<div id="listaComentarios"></div>
+
+</div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="section" id="contacto">
+
+<h2 class="section-title">
+Contáctanos
+</h2>
+
+<div class="contact-grid">
+
+<a href="https://wa.me/51982405690"
+target="_blank"
+class="contact-box">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<h3>WhatsApp</h3>
+
+<p>982 405 690</p>
+
+</a>
+
+<a href="mailto:mgfarmasalud@gmail.com"
+class="contact-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<h3>Correo</h3>
+
+<p>mgfarmasalud@gmail.com</p>
+
+</a>
+
+<a href="https://instagram.com/mgfarmasaludpe"
+target="_blank"
+class="contact-box">
+
+<i class="fa-brands fa-instagram"></i>
+
+<h3>Instagram</h3>
+
+<p>@mgfarmasaludpe</p>
+
+</a>
+
+<a href="https://maps.google.com"
+target="_blank"
+class="contact-box">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>Dirección</h3>
+
+<p>Jr. Garu mz C</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 MG FarmaSalud - MG CORPORATION
+
+<span class="creator">
+Hecho por VICTOR MARTINEZ GODOY
+</span>
+
+</footer>
+
+<script>
+
+const prizes = [
+
+'🎉 10% DE DESCUENTO',
+'🔥 20% DE DESCUENTO',
+'🎁 PRODUCTO GRATIS',
+'🚚 ENVÍO GRATIS',
+'💊 2x1 EN PRODUCTOS',
+'⭐ 30% DE DESCUENTO'
+
+];
+
+function spinWheel(){
+
+const wheel =
+document.getElementById('wheel');
+
+const result =
+document.getElementById('result');
+
+const sound =
+document.getElementById('winSound');
+
+const degrees =
+Math.floor(Math.random()*3600)+3000;
+
+wheel.style.transform =
+`rotate(${degrees}deg)`;
+
+result.innerHTML='';
+
+setTimeout(()=>{
+
+const prize =
+prizes[Math.floor(Math.random()*prizes.length)];
+
+result.innerHTML =
+prize + ' ✨🎊';
+
+sound.play();
+
+confetti({
+
+particleCount:250,
+spread:180,
+origin:{y:0.6}
+
+});
+
+},5000);
+
+}
+
+/* COMENTARIOS */
+
+const form =
+document.getElementById('commentForm');
+
+const lista =
+document.getElementById('listaComentarios');
+
+form.addEventListener('submit',function(e){
+
+e.preventDefault();
+
+const nombre =
+document.getElementById('nombre').value;
+
+const mensaje =
+document.getElementById('mensaje').value;
+
+const comentario =
+document.createElement('div');
+
+comentario.classList.add('comentario');
+
+comentario.innerHTML = `
+
+<h3 style="color:#ffd54a;">
+${nombre}
+</h3>
+
+<div style="color:#ffd54a;font-size:22px;margin:10px 0;">
+★★★★★
+</div>
+
+<p style="line-height:1.7;color:#ddd;">
+${mensaje}
+</p>
+
+`;
+
+lista.prepend(comentario);
+
+form.reset();
+
+confetti({
+
+particleCount:120,
+spread:100,
+origin:{y:0.6}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
